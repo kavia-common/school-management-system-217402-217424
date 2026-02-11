@@ -1,0 +1,135 @@
+.page {
+  display: grid;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.widget {
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.widget::after {
+  content: "";
+  position: absolute;
+  inset: -40% -30%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 255, 209, 0.18), transparent 55%),
+    radial-gradient(circle at 70% 60%, rgba(255, 61, 113, 0.12), transparent 60%);
+  pointer-events: none;
+}
+
+.widgetTitle {
+  position: relative;
+  font-weight: 900;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.widgetValue {
+  position: relative;
+  font-weight: 1000;
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.widgetSub {
+  position: relative;
+  margin-top: 6px;
+  opacity: 0.8;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.panel {
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.panelTitle {
+  padding: 12px 14px;
+  font-weight: 1000;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.18);
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.14), rgba(255, 214, 0, 0.12));
+}
+
+.panelBody {
+  padding: 12px 14px;
+  font-weight: 800;
+}
+
+.pre {
+  margin: 0;
+  padding: 12px 14px;
+  overflow: auto;
+  background: rgba(11, 18, 32, 0.05);
+  border-top: 2px dashed rgba(0, 0, 0, 0.12);
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(0, 255, 209, 0.14), transparent 65%);
+  box-shadow: var(--shadow);
+}
+
+.heroTitle {
+  font-weight: 1000;
+  font-size: 22px;
+  letter-spacing: 0.4px;
+}
+
+.heroDesc {
+  margin-top: 4px;
+  opacity: 0.85;
+  font-weight: 700;
+}
+
+.endpointChip {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: 900;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .endpointChip {
+    white-space: normal;
+  }
+}

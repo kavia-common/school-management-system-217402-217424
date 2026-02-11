@@ -1,0 +1,78 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 3px solid rgba(0, 0, 0, 0.15);
+  border-top-color: var(--accent);
+  animation: spin 0.9s linear infinite;
+}
+
+.text {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  padding: 14px 16px;
+  border: 2px solid var(--danger);
+  background: rgba(255, 61, 113, 0.08);
+  border-radius: 12px;
+}
+
+.errorTitle {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.errorMessage {
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.retryBtn {
+  appearance: none;
+  border: 2px solid var(--danger);
+  background: var(--danger);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.retryBtn:hover {
+  filter: brightness(1.05);
+}
+
+.empty {
+  padding: 14px 16px;
+  border: 2px dashed var(--border);
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+.emptyTitle {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.emptyMessage {
+  opacity: 0.85;
+}
